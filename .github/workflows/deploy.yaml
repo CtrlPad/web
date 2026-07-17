@@ -1,0 +1,61 @@
+name: Deploy
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changelog: ${{ steps.changelog.outputs.changelog }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Build Changelog
+        id: changelog
+        uses: mikepenz/release-changelog-builder-action@v6
+        with:
+          mode: 'COMMIT'
+          toTag: ${{ github.event.release.tag_name }}
+          configuration: '.github/changelog-config.json'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Release
+        uses: softprops/action-gh-release@v3
+        with:
+          body: ${{ steps.changelog.outputs.changelog }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    name: Push release
+    needs: changelog
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://ctrlpad.xyz
+    permissions:
+      contents: read
+      packages: write
+      deployments: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Trigger Portainer Redeploy
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}")
+          if [ "$response" -ne 200 ] && [ "$response" -ne 204 ]; then
+            echo "Webhook failed with status: $response"
+            exit 1
+          fi
+          echo "Deployment triggered successfully":
+
