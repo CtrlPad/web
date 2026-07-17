@@ -16,6 +16,8 @@
     "next:build".exec = "pnpm next build";
     "next:start".exec = "pnpm next start";
     "next:lint".exec = "pnpm eslint";
+    "next:format:check".exec = "pnpm format:check";
+    "next:format".exec = "pnpm format";
   };
 
   enterShell = ''
