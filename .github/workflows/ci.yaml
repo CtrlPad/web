@@ -29,7 +29,7 @@ jobs:
         run: pnpm lint
 
       - name: Check Prettier formatting
-        run: pnpm forma:check
+        run: pnpm format:check
 
   build:
     name: build
