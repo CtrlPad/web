@@ -1,3 +1,5 @@
+import Hero from "./_sections/Hero"
+
 export default function Home() {
-    return <h1>Ctrlpad</h1>;
+  return <main><Hero /></main>;
 }

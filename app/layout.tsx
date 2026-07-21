@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
+import Footer from "@/components/common/Footer"
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-    variable: "--font-geist-sans",
-    subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-    title: "Ctrlpad",
-    description: "",
+  title: "Ctrlpad",
+  description: "Ctrlpad: Make controls fast, launch apps instantly.",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-            <body className="min-h-full flex flex-col">{children}</body>
-        </html>
-    );
+  return (
+    <html lang="en" className={cn("h-full", "antialiased", montserrat.variable, "font-sans")}>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
 }
