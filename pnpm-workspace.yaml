@@ -1,8 +1,8 @@
 allowBuilds:
-    sharp: true
-    unrs-resolver: true
+  sharp: true
+  unrs-resolver: true
 ignoredBuiltDependencies:
-    - sharp
-    - unrs-resolver
+  - sharp
+  - unrs-resolver
 minimumReleaseAgeExclude:
-    - prettier@3.9.6
+  - prettier@3.9.6
