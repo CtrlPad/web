@@ -3,7 +3,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center bg-[#F9FAFB] overflow-hidden">
+    <section id="hero" className="relative flex min-h-screen items-center justify-center bg-[#F9FAFB] overflow-hidden">
       <Bubbles />
       <div className="z-2">
         <h1 className="text-8xl font-semibold text-center">CtrlPad</h1>
