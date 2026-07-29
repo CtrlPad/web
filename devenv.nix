@@ -12,12 +12,12 @@
   ];
 
   scripts = {
-    "next:dev".exec = "pnpm next dev";
-    "next:build".exec = "pnpm next build";
-    "next:start".exec = "pnpm next start";
-    "next:lint".exec = "pnpm eslint";
-    "next:format:check".exec = "pnpm format:check";
-    "next:format".exec = "pnpm format";
+    "next:dev".exec = "pnpm run dev";
+    "next:build".exec = "pnpm run build";
+    "next:start".exec = "pnpm run start";
+    "next:lint".exec = "pnpm run lint";
+    "next:format:check".exec = "pnpm run format:check";
+    "next:format".exec = "pnpm run format";
   };
 
   enterShell = ''
