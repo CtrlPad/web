@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", instrument_sans.variable, "font-sans")}>
+    <html lang="en" dir="ltr" className={cn("h-full", "antialiased", instrument_sans.variable, "font-sans")}>
       <body className="min-h-full flex flex-col">
         {children}
         <Footer />
