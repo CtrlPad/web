@@ -20,7 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" dir="ltr" className={cn("h-full", "antialiased", instrument_sans.variable, "font-sans")} suppressHydrationWarning>
+    <html
+      lang="en"
+      dir="ltr"
+      className={cn("h-full", "antialiased", instrument_sans.variable, "font-sans")}
+      suppressHydrationWarning
+    >
       <body>
         {children}
         <Footer />
