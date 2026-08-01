@@ -1,3 +1,5 @@
-export default {
-  'getting-started': 'Getting Started',
-}
+const meta = {
+  "getting-started": "Getting Started",
+};
+
+export default meta;
