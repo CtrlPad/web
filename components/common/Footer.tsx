@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="grid grid-cols-3 py-3">
           <div className="flex flex-col">
             <h4 className="text-xl font-semibold">Ctrlpad</h4>
-            <p>Make controls fast, launch apps instantly.</p>
+            <p className="text-sm font-medium">Make controls fast, launch apps instantly.</p>
           </div>
           <Produkt />
           <Community />
         </div>
         <Separator />
-        <div className="flex justify-between py-3">
+        <div className="flex justify-between py-3 text-sm font-medium">
           <div className="flex items-center flex-row space-x-2">
             <p className="flex items-center gap-1.5">
               <Copyright size={13} /> 2026 Ctrlpad
