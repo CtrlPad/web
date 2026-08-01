@@ -22,7 +22,7 @@ export default function Footer() {
               <Copyright size={13} /> 2026 Ctrlpad
             </p>
             <Separator orientation="vertical" />
-            <Button variant="link" className="justify-start">
+            <Button variant="link" className="justify-start p-0">
               <Link href="#">Imprint</Link>
             </Button>
             <Separator orientation="vertical" />
