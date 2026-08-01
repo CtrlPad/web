@@ -8,7 +8,7 @@ export default async function NextraLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <Layout pageMap={await getPageMap()} docsRepositoryBase="https://github.com/ctrlpad/web/tree/main/docs">
+    <Layout pageMap={await getPageMap()} docsRepositoryBase="https://github.com/ctrlpad/web/tree/main/docs" darkMode={false} nextThemes={{defaultTheme: 'light', forcedTheme: 'light'}}>
       {children}
     </Layout>
   );
