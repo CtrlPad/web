@@ -8,7 +8,7 @@ export default function Hero() {
       <Bubbles />
       <div className="z-2">
         <h1 className="text-8xl font-semibold text-center">CtrlPad</h1>
-        <h2 className="text-3xl text-center">Make controls fast, launch apps instantly.</h2>
+        <h2 className="text-3xl text-center font-medium">Make controls fast, launch apps instantly.</h2>
         <div className="flex justify-center items-center space-x-5 p-5">
           <Link href="/docs">
             <Button size="lg" className="w-48 h-12 text-xl bg-[#10B981] hover:bg-[#10B981]/80 rounded-md">
