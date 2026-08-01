@@ -1,5 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Heart, Copyright } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -10,21 +12,8 @@ export default function Footer() {
             <h4 className="text-xl font-semibold">Ctrlpad</h4>
             <p>Make controls fast, launch apps instantly.</p>
           </div>
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold">Product</h4>
-            <p>Documentation</p>
-            <p>Installation</p>
-            <p>Releases</p>
-            <p>Requirements</p>
-          </div>
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold">Community</h4>
-            <a>GitHub</a>
-            <a>Discord</a>
-            <a>X</a>
-            <a>Instagram</a>
-            <a>Reddit</a>
-          </div>
+          <Produkt />
+          <Community />
         </div>
         <Separator />
         <div className="flex justify-between py-3">
@@ -33,7 +22,9 @@ export default function Footer() {
               <Copyright size={13} /> 2026 Ctrlpad
             </p>
             <Separator orientation="vertical" />
-            <a>Imprint</a>
+            <Button variant="link" className="justify-start">
+              <Link href="#">Imprint</Link>
+            </Button>
             <Separator orientation="vertical" />
             <p>MIT License</p>
           </div>
@@ -47,5 +38,48 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function Produkt() {
+  return (
+    <div className="flex flex-col">
+      <h4 className="text-lg font-semibold">Product</h4>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Documentation</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Ctrlpad-Desktop Installation</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Releases</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Requirements</Link>
+      </Button>
+    </div>
+  );
+}
+
+function Community() {
+  return (
+    <div className="flex flex-col">
+      <h4 className="text-lg font-semibold">Community</h4>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">GitHub</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Discord</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">X</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Instagram</Link>
+      </Button>
+      <Button variant="link" className="justify-start p-0">
+        <Link href="#">Reddit</Link>
+      </Button>
+    </div>
   );
 }
