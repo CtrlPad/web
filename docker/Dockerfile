@@ -7,6 +7,7 @@ FROM node:${NODE_VERSION} AS dependencies
 WORKDIR /app
 
 COPY package.json package-lock.json* pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
+COPY patches/ ./patches/
 
 
 RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
