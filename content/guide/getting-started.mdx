@@ -1,1 +1,49 @@
+import { Callout, Steps } from "nextra/components";
+
 # Getting started
+
+<Callout type="warning">
+  Everything is developed on **Linux** and has **not** been tested or built for **Windows or macOS**.
+</Callout>
+
+This guide walks you through setting up all three components of Ctrlpad.
+
+The three components are:
+
+- [**Ctrlpad (Firmware)**](/guide/ctrlpad-firmware) - the firmware that runs on your CYD device
+- **Ctrlpad-Daemon** - a background service on your computer that executes button actions
+- **Ctrlpad-Desktop** - the app where you configure your buttons
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A [Cheap Yellow Display (CYD / ESP32-2432S024)](https://www.espboards.dev/esp32/cyd-esp32-2432s024/) board
+- A USB cable to connect it to your computer
+- Bluetooth on your computer
+
+## Setup Order
+
+The order isn't strictly required, but this is the recommended way to set things up:
+
+<Steps>
+
+### Flash the Firmware
+
+Flash the Ctrlpad firmware onto your CYD board. This turns the hardware into a Ctrlpad device that can communicate with your computer over Bluetooth.
+
+→ [Ctrlpad (Firmware)](docs/guide/ctrlpad-firmware)
+
+### Install the Daemon
+
+Install and start the Ctrlpad-Daemon on your computer. The daemon is the background service that listens for button presses and executes the configured actions.
+
+→ Ctrlpad-Daemon
+
+### Install the Desktop App
+
+Install Ctrlpad-Desktop to configure your buttons - assign apps, scripts, or shortcuts to each one.
+
+→ Ctrlpad-Desktop
+
+</Steps>
