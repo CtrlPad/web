@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import Script from 'next/script'
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Callout } from "nextra/components";
 import { Zap } from "lucide-react";
-
 
 export default function FlashButton() {
   return (
@@ -22,5 +21,5 @@ export default function FlashButton() {
         </div>
       </esp-web-install-button>
     </div>
-  )
+  );
 }

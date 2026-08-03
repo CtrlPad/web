@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
-const FIRMWARE_URL =
-  "https://github.com/CtrlPad/firmware/releases/latest/download/ctrlpad.bin";
+const FIRMWARE_URL = "https://github.com/CtrlPad/firmware/releases/latest/download/ctrlpad.bin";
 
 export const revalidate = 300;
 export async function GET() {
@@ -11,10 +10,7 @@ export async function GET() {
   });
 
   if (!upstream.ok || !upstream.body) {
-    return NextResponse.json(
-      { error: `Failed to fetch firmware (${upstream.status})` },
-      { status: 502 },
-    );
+    return NextResponse.json({ error: `Failed to fetch firmware (${upstream.status})` }, { status: 502 });
   }
 
   return new NextResponse(upstream.body, {
