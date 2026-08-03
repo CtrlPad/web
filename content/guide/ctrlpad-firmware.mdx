@@ -1,0 +1,40 @@
+import { Callout, Steps } from "nextra/components";
+import FlashButton from "@/components/common/Flash.tsx"
+
+# Ctrlpad Firmware
+
+The Ctrlpad firmware runs on your CYD (ESP32) board and handles the display, touch input, and Bluetooth communication with your computer.
+
+## Flashing via Browser
+
+The easiest way to install the firmware is directly from your browser — no drivers or additional tools required.
+
+<Callout type="warning">
+  The web flasher only works in **Chromium-based browsers** (Google Chrome or Microsoft Edge). Firefox and Safari are not supported.
+</Callout>
+
+<Steps>
+
+### Connect your board
+
+Plug your CYD board into your computer using a USB cable. Make sure to use a **data cable**. Charge-only cables will not work.
+
+### Start flashing
+
+Click the button below. Your browser will ask you to select a serial port. Choose the one labeled `USB Serial` or `CP210x`.
+
+<FlashButton />
+
+### Wait for completion
+
+The flashing process will begin automatically. Do not unplug the board while it is in progress.
+
+### Done
+
+Once complete, the board restarts automatically and boots into the Ctrlpad UI.
+
+</Steps>
+
+<Callout type="info">
+  If no port appears in the list, try a different USB cable or a different USB port on your computer.
+</Callout>

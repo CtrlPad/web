@@ -1,0 +1,14 @@
+{
+  "name": "CtrlPad",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "/api/firmware",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
