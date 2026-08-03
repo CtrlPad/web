@@ -5,9 +5,14 @@ import FlashButton from "@/components/common/Flash.tsx";
 
 The Ctrlpad firmware runs on your CYD (ESP32) board and handles the display, touch input, and Bluetooth communication with your computer.
 
-## Flashing via Browser
+## Flashing via Browser (recommended)
 
-The easiest way to install the firmware is directly from your browser — no drivers or additional tools required.
+The easiest way to install the firmware is directly from your browser — no drivers or additional tools required. **This is the recommended method for most users.**
+
+<Callout type="info">
+  Prefer the browser method unless you have a specific reason to use the command line. The Esptool method below is
+  intended for advanced users.
+</Callout>
 
 <Callout type="warning">
   The web flasher only works in **Chromium-based browsers** (Google Chrome or Microsoft Edge). Firefox and Safari are not
@@ -39,3 +44,42 @@ Once complete, the board restarts automatically and boots into the Ctrlpad UI.
 <Callout type="info">
   If no port appears in the list, try a different USB cable or a different USB port on your computer.
 </Callout>
+
+## Flashing with Esptool
+
+<Steps>
+
+### Connect your board
+
+Plug your CYD board into your computer using a USB cable. Make sure to use a **data cable**. Charge-only cables will not work.
+
+### Install Esptool
+
+Install the [Esptool](https://docs.espressif.com/projects/esptool/en/latest/esp32/) software. It is used to flash firmware onto your board.
+
+### Find your serial port
+
+Identify the serial port your board is connected to. It depends on your operating system:
+
+- **Linux:** `/dev/ttyUSB0` or `/dev/ttyACM0`
+- **macOS:** `/dev/cu.SLAB_USBtoUART` or `/dev/cu.usbserial-*`
+- **Windows:** `COM3`, `COM4`, etc.
+
+<Callout type="info">
+  Replace `<PORT>` in the command below with your actual port. Using the wrong port will cause the flash to fail.
+</Callout>
+
+### Download and Flash the Firmware
+
+Download the firmware to a temporary directory and flash it:
+
+```sh
+curl -L -o /tmp/ctrlpad.bin https://github.com/CtrlPad/firmware/releases/latest/download/ctrlpad.bin && esptool --port <PORT> write_flash 0x0 /tmp/ctrlpad.bin
+```
+
+### Done
+
+Once complete, the board restarts automatically and boots into the Ctrlpad UI.
+
+</Steps>
+
