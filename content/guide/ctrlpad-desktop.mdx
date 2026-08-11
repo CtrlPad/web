@@ -1,1 +1,77 @@
+import { Callout } from "nextra/components";
+
 # Ctrlpad Desktop
+
+All the ways to install the Ctrlpad-Desktop app on Linux: from your distribution's package manager, using the installation script, or building from source.
+
+## Package Repository
+
+The most direct way to install Ctrlpad-Desktop, if your distribution is covered. If it's not, use the install script instead.
+
+### Arch Linux (AUR)
+
+<Callout type="warning">
+  The AUR package was ready to be released, but the AUR is currently down, so it could not be published yet. It will
+  follow as soon as the AUR is back up.
+</Callout>
+
+### Snap
+
+Ctrlpad-Desktop is published on the [Snap Store](https://snapcraft.io/ctrlpad-desktop) as `ctrlpad-desktop`:
+
+```sh copy
+sudo snap install ctrlpad-desktop
+```
+
+The snap is strictly confined and Bluetooth is not connected automatically, so grant it access before the first start:
+
+```sh copy
+sudo snap connect ctrlpad-desktop:bluez
+```
+
+### NixOS
+
+Ctrlpad-Desktop ships its own flake. Add the flake as an input:
+
+```nix filename="flake.nix"
+{
+  inputs = {
+    # ...
+    ctrlpad-desktop.url = "github:ctrlpad/desktop";
+  };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ctrlpad-desktop,
+    ...
+  }: {
+    # ...
+  }
+}
+```
+
+Then import the NixOS module and enable the program:
+
+```nix filename="configuration.nix"
+{ inputs, ... }:
+{
+  imports = [
+    # ...
+    inputs.ctrlpad-desktop.nixosModules.default
+  ];
+
+  programs.ctrlpad-desktop.enable = true;
+}
+```
+
+If you want to pin a different build of the app, override the package option:
+
+```nix filename="configuration.nix"
+{ inputs, pkgs, ... }:
+{
+  programs.ctrlpad-desktop = {
+    enable = true;
+    package = inputs.ctrlpad-desktop.packages.${pkgs.system}.ctrlpad-desktop;
+  };
+}
+```

@@ -1,1 +1,75 @@
+import { Callout } from "nextra/components";
+
 # Ctrlpad Daemon
+
+All the ways to install the Ctrlpad-Daemon on Linux: from your distribution's package manager, using the installation script, or building from source.
+
+## Package Repository
+
+The most direct way to install Ctrlpad-Daemon, if your distribution is covered. If it's not, use the install script instead.
+
+### Arch Linux (AUR)
+
+<Callout type="warning">
+  The AUR package was ready to be released, but the AUR is currently down, so it could not be published yet. It will
+  follow as soon as the AUR is back up.
+</Callout>
+
+### Snap
+
+Ctrlpad-Daemon is published on the [Snap Store](https://snapcraft.io/ctrlpad-daemon) as `ctrlpad-daemon`:
+
+```sh copy
+sudo snap install ctrlpad-daemon
+```
+
+The snap is strictly confined and Bluetooth is not connected automatically, so grant it access before the first start:
+
+```sh copy
+sudo snap connect ctrlpad-daemon:bluez
+```
+
+### NixOS
+
+Ctrlpad-Daemon ships its own flake. Add the flake as an input:
+
+```nix filename="flake.nix"
+{
+  inputs = {
+    # ...
+    ctrlpad-daemon.url = "github:ctrlpad/daemon";
+  };
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ctrlpad-daemon,
+    ...
+  }: {
+    # ...
+  }
+}
+```
+
+Then import the NixOS module and enable the program:
+
+```nix filename="configuration.nix"
+{ inputs, ... }:
+{
+  imports = [
+    # ...
+    inputs.ctrlpad-daemon.nixosModules.default
+  ];
+
+  services.ctrlpad-daemon.enable = true;
+}
+```
+
+If you want to pin a different build of the app, override the package option:
+
+```nix filename="configuration.nix"
+{ inputs, pkgs, ... }:
+{
+  programs.ctrlpad-daemon.enable = true;
+}
+```
+
