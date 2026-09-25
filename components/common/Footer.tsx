@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="border-border border-t py-10">
-      <div className="flex w-7xl mx-auto flex-col">
-        <div className="grid grid-cols-3 py-3">
+      <div className="flex max-w-7xl mx-auto flex-col">
+        <div className="grid grid-row-3 justify-center items-center md:justify-start md:items-start md:grid-cols-3 py-3 gap-5">
           <div className="flex flex-col">
             <h4 className="text-xl font-semibold">Ctrlpad</h4>
             <p className="text-sm font-medium">Make controls fast, launch apps instantly.</p>
@@ -16,7 +16,7 @@ export default function Footer() {
           <Community />
         </div>
         <Separator />
-        <div className="flex justify-between py-3 text-sm font-medium">
+        <div className="flex flex-col md:flex-row md:justify-between items-center gap-3 py-3 text-sm font-medium">
           <div className="flex items-center flex-row space-x-2">
             <p className="flex items-center gap-1.5">
               <Copyright size={13} /> 2026 Ctrlpad
