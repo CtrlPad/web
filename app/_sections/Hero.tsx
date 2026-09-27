@@ -1,11 +1,17 @@
 import { Button } from "@/components/ui/button";
+import Bubble from "@/components/common/Bubble";
 import { ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
   return (
     <section id="hero" className="relative flex min-h-screen items-center justify-center bg-[#F9FAFB] overflow-hidden">
-      <Bubbles />
+      <Bubble className="size-100 bg-[#858AE3]/50 top-[5%] left-[5%]" />
+      <Bubble className="size-82 bg-[#FFB700]/50 bottom-[5%] right-[5%] [animation-duration:6s] [animation-delay:1.5s]" />
+      <Bubble className="size-82 bg-[#34D399]/50 top-[30%] left-[30%] z-1 [animation-duration:7s] [animation-delay:3s]" />
+      <Bubble className="size-64 bg-[#F44491]/50 top-[40%] right-[20%] z-1 [animation-duration:5.5s] [animation-delay:0.8s]" />
+      <Bubble className="size-128 bg-[#AACC00]/50 bottom-[-10%] left-[-10%] z-1 [animation-duration:6.5s] [animation-delay:2.2s]" />
+      <Bubble className="size-82 bg-[#34D399]/50 top-[0%] right-[-10%] z-1 [animation-duration:8s] [animation-delay:4s]" />
       <div className="z-2">
         <h1 className="text-6xl sm:text-8xl font-semibold text-center">CtrlPad</h1>
         <h2 className="text-2xl sm:text-3xl text-center font-medium">Make controls fast, launch apps instantly.</h2>
@@ -23,19 +29,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function Bubbles() {
-  return (
-    <>
-      <div className="absolute size-100 bg-[#858AE3]/50 top-[5%] left-[5%] rounded-full blur-3xl animate-pulse [animation-duration:5s]" />
-      <div className="absolute size-82 bg-[#FFB700]/50 bottom-[5%] right-[5%] rounded-full blur-3xl animate-pulse [animation-duration:6s] [animation-delay:1.5s]" />
-      <div className="absolute size-82 bg-[#34D399]/50 top-[30%] left-[30%] rounded-full blur-3xl animate-pulse z-1 [animation-duration:7s] [animation-delay:3s]" />
-
-      <div className="absolute size-64 bg-[#F44491]/50 top-[40%] right-[20%] rounded-full blur-3xl animate-pulse z-1 [animation-duration:5.5s] [animation-delay:0.8s]" />
-      <div className="absolute size-128 bg-[#AACC00]/50 bottom-[-10%] left-[-10%] rounded-full blur-3xl animate-pulse z-1 [animation-duration:6.5s] [animation-delay:2.2s]" />
-      <div className="absolute size-82 bg-[#34D399]/50 top-[0%] right-[-10%] rounded-full blur-3xl animate-pulse z-1 [animation-duration:8s] [animation-delay:4s]" />
-    </>
   );
 }
