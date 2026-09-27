@@ -133,3 +133,26 @@ body {
     @apply font-sans;
   }
 }
+
+@utility grid-bg {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: linear-gradient(
+        rgba(20, 184, 166, 0.15) 2px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.15) 1px, transparent 2px);
+    background-size: 30px 30px;
+    mask-image: radial-gradient(ellipse at bottom, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at bottom,
+      black 0%,
+      transparent 80%
+    );
+  }
+}
