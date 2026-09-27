@@ -143,17 +143,11 @@ body {
     inset: 0;
     z-index: -1;
     border-radius: inherit;
-    background-image: linear-gradient(
-        rgba(20, 184, 166, 0.15) 2px,
-        transparent 1px
-      ),
+    background-image:
+      linear-gradient(rgba(20, 184, 166, 0.15) 2px, transparent 1px),
       linear-gradient(90deg, rgba(20, 184, 166, 0.15) 1px, transparent 2px);
     background-size: 30px 30px;
     mask-image: radial-gradient(ellipse at bottom, black 0%, transparent 70%);
-    -webkit-mask-image: radial-gradient(
-      ellipse at bottom,
-      black 0%,
-      transparent 80%
-    );
+    -webkit-mask-image: radial-gradient(ellipse at bottom, black 0%, transparent 80%);
   }
 }
