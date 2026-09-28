@@ -5,6 +5,7 @@ export default function Features() {
   return (
     <section className="border-border border-t" id="features">
       <div className="w-full flex flex-col items-center gap-6 py-10">
+        <h1 className="text-2xl font-medium">Features</h1>
         <div className="grid grid-cols-3 gap-4 h-100 w-full max-w-5xl px-5 *:relative *:overflow-hidden *:rounded-md *:border-2 *:border-border *:h-full *:grid-bg *:px-6">
           <div>
             <Bubble className="size-40 bg-[#858AE3]/50 top-[-15%] left-[-15%]" />
