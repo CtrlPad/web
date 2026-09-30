@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative flex items-center justify-center bg-[#F9FAFB] overflow-hidden">
+    <section id="hero" className="min-h-screen relative flex items-center justify-center bg-[#F9FAFB] overflow-hidden">
       <Bubble className="size-100 bg-[#858AE3]/50 top-[5%] left-[5%]" />
       <Bubble className="size-82 bg-[#FFB700]/50 bottom-[5%] right-[5%] [animation-duration:6s] [animation-delay:1.5s]" />
       <Bubble className="size-82 bg-[#34D399]/50 top-[30%] left-[30%] z-1 [animation-duration:7s] [animation-delay:3s]" />
