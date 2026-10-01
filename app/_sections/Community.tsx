@@ -1,5 +1,5 @@
-import { Badge } from "@/components/ui/badge"
-import { SiDiscord } from '@icons-pack/react-simple-icons';
+import { Badge } from "@/components/ui/badge";
+import { SiDiscord } from "@icons-pack/react-simple-icons";
 import { Button } from "@/components/ui/button";
 
 export default function Community() {
@@ -18,5 +18,5 @@ export default function Community() {
         </div>
       </div>
     </section>
-  )
+  );
 }
