@@ -7,7 +7,7 @@ export default function Community() {
     <section className="border-border border-t bg-[#F8FAFC]" id="features">
       <div className="w-full flex flex-col items-center gap-6 py-10">
         <div className="flex flex-col py-5 items-center space-y-2">
-          <Badge className="bg-[#10B981]">Community</Badge>
+          <Badge className="bg-[#10B981] text-base">Community</Badge>
           <h1 className="text-4xl font-semibold">Join a great Community and grow together</h1>
         </div>
         <div className="flex flex-col items-center space-y-4">

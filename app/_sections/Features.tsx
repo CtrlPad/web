@@ -7,7 +7,7 @@ export default function Features() {
     <section className="border-border border-t" id="features">
       <div className="w-full flex flex-col items-center gap-6 py-10">
         <div className="flex flex-col py-5 items-center space-y-2">
-          <Badge className="bg-[#10B981]">Features</Badge>
+          <Badge className="bg-[#10B981] text-base">Features</Badge>
           <h1 className="text-4xl font-semibold">Everyting you need to be fast</h1>
         </div>
         <div className="grid grid-cols-3 gap-4 h-100 w-full max-w-5xl px-5 *:relative *:overflow-hidden *:rounded-md *:border-2 *:border-border *:h-full *:grid-bg *:px-6">
