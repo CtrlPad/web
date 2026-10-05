@@ -2,6 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Heart, Copyright } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { version } from '../../package.json'
 
 export default function Footer() {
   return (
@@ -27,6 +28,8 @@ export default function Footer() {
             </Button>
             <Separator orientation="vertical" />
             <p>MIT License</p>
+            <Separator orientation="vertical" />
+            <p>v{version}</p>
           </div>
           <p className="flex items-center gap-1.5">
             Made with
