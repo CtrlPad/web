@@ -22,7 +22,7 @@
 
   enterShell = ''
     echo
-    figlet -f slant "ctrlPad" | lolcat -p 1
+    figlet -f slant "Ctrlpad" | lolcat -p 1
     echo
   '';
 }

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const FIRMWARE_URL = "https://github.com/CtrlPad/firmware/releases/latest/download/ctrlpad.bin";
+const FIRMWARE_URL = "https://github.com/Ctrlpad/firmware/releases/latest/download/ctrlpad.bin";
 
 export const revalidate = 300;
 export async function GET() {

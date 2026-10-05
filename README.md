@@ -1,8 +1,8 @@
 # Ctrlpad-web
 
-![GitHub stars](https://img.shields.io/github/stars/ctrlPad/firmware?style=for-the-badge&logo=github) ![GitHub issues](https://img.shields.io/github/issues/ctrlPad/firmware?style=for-the-badge&logo=github) ![Last commit](https://img.shields.io/github/last-commit/ctrlPad/firmware?style=for-the-badge&logo=github)
+![GitHub stars](https://img.shields.io/github/stars/ctrlpad/firmware?style=for-the-badge&logo=github) ![GitHub issues](https://img.shields.io/github/issues/ctrlpad/firmware?style=for-the-badge&logo=github) ![Last commit](https://img.shields.io/github/last-commit/ctrlpad/firmware?style=for-the-badge&logo=github)
 
-The website and documentation for [CtrlPad](https://github.com/CtrlPad) - built with [Next.js](https://nextjs.org) and [Nextra](https://nextra.site).
+The website and documentation for [Ctrlpad](https://github.com/Ctrlpad) - built with [Next.js](https://nextjs.org) and [Nextra](https://nextra.site).
 
 It serves the landing page, the documentation under `/docs`, and a small API route that proxies the latest firmware binary for the browser flasher.
 

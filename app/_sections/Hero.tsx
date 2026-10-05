@@ -13,7 +13,7 @@ export default function Hero() {
       <Bubble className="size-128 bg-[#AACC00]/50 bottom-[-10%] left-[-10%] z-1 [animation-duration:6.5s] [animation-delay:2.2s]" />
       <Bubble className="size-82 bg-[#34D399]/50 top-[0%] right-[-10%] z-1 [animation-duration:8s] [animation-delay:4s]" />
       <div className="z-2">
-        <h1 className="text-6xl sm:text-8xl font-semibold text-center">CtrlPad</h1>
+        <h1 className="text-6xl sm:text-8xl font-semibold text-center">Ctrlpad</h1>
         <h2 className="text-2xl sm:text-3xl text-center font-medium">Make controls fast, launch apps instantly.</h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-5 p-5">
           <Link href="/docs" className="w-full md:w-auto">
