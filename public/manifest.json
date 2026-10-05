@@ -1,5 +1,5 @@
 {
-  "name": "Ctrlpad",
+  "name": "Ctrlad",
   "builds": [
     {
       "chipFamily": "ESP32",
