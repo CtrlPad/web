@@ -2,7 +2,7 @@ import { Separator } from "@/components/ui/separator";
 import { Heart, Copyright } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { version } from '../../package.json'
+import { version } from "../../package.json";
 
 export default function Footer() {
   return (
