@@ -72,3 +72,30 @@ If you want to pin a different build of the app, override the package option:
   programs.ctrlpad-daemon.enable = true;
 }
 ```
+
+## Manual Download
+
+Download the archive for your platform from [Github Releases: ](https://github.com/ctrlpad/daemon/releases/latest)
+
+| Platform | File |
+|----------|---|
+| Linux arm64 | `ctrlpad-daemon_Linux_arm64.tar.gz` |
+| Linux i386 | `ctrlpad-daemon_Linux_i386.tar.gz` |
+| Linux x86_64 | `ctrlpad-daemon_Linux_x86_64.tar.gz` |
+
+Extract and move to your PATH:
+
+```bash
+tar -xzf ctrlpad-daemon_Linux_*.tar.gz
+sudo mv ctrlpad-daemon /usr/local/bin/
+```
+
+## Build from source
+
+```bash
+git clone https://github.com/ctrlpad/daemon.git
+cd daemon
+go build -o ctrlpad-daemon
+sudo mv ctrlpad-daemon /usr/local/bin/
+```
+
